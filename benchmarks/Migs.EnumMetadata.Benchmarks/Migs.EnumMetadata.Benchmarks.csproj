@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<LangVersion>default</LangVersion>
+		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
+		<TargetFramework>net8.0</TargetFramework>
+		<RootNamespace>Migs.EnumMetadata.Benchmarks</RootNamespace>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="BenchmarkDotNet" Version="0.14.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\src\Migs.EnumMetadata\Migs.EnumMetadata.csproj" />
+	</ItemGroup>
+
+</Project>
