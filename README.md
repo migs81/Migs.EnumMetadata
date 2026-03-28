@@ -1,10 +1,11 @@
-﻿# 📚 Migs.EnumMetadata - Enum Metadata Library
+﻿# 📚 Migs.EnumMetadata
 
 A lightweight C# library for extending enums with custom metadata properties.
 
 ## 📝 Description
 
-This library allows you to attach additional metadata to enum values, enabling richer functionality and easier integration with other systems. It supports `.NET Standard 2.0`, `.NET 6.0`, and `.NET 8.0`.
+This library allows you to attach additional metadata to enum values, enabling richer functionality and easier integration with other systems. 
+It supports `.NET Standard 2.0`, `.NET 6.0`, and `.NET 8.0`.
 
 ## ✨ Features
 
@@ -97,13 +98,14 @@ Console.WriteLine(cornflowerBlue.Code); // Output: "#6495ED"
 
 ## 📊 Benchmarks
 
-This project includes a benchmark project to measure the performance of the library. You can find it in the `src/Benchmarks/` folder.
+This project includes a benchmark project to measure the performance of the library. 
+You can find it in the `benchmarks/` folder.
 
 ### Running Benchmarks
 
 1. Navigate to the benchmark project:
   ```bash
-   cd src/Benchmarks/
+   cd benchmarks/Migs.EnumMetadata
   ```
 2. Run the benchmarks using [BenchmarkDotNet](https://benchmarkdotnet.org/):
   ```bash
