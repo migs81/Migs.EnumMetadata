@@ -96,6 +96,14 @@ Console.WriteLine(cornflowerBlue.Description); // Output: "Shade of medium-to-li
 Console.WriteLine(cornflowerBlue.Code); // Output: "#6495ED"
 ```
 
+### 5. Activate caching
+
+To improve performance, the attributes can be cached so that repeated calls run more efficiently.
+
+```csharp
+EnumMetadataConfig.UseCache = true;
+```
+
 ## 📊 Benchmarks
 
 This project includes a benchmark project to measure the performance of the library. 
@@ -111,6 +119,23 @@ You can find it in the `benchmarks/` folder.
   ```bash
    dotnet run -c Release
   ```
+### Benchmark results
+
+ - OS: Bazzite 43
+ - CPU: 12 × Intel® Core™ i7-8750H CPU @ 2.20GHz
+ - RAM: 16 GiB
+
+| Method                              | Job      | Runtime  | Mean        | Error     | StdDev    | Ratio | RatioSD | Rank | Gen0   | Allocated | Alloc Ratio |
+|------------------------------------ |--------- |--------- |------------:|----------:|----------:|------:|--------:|-----:|-------:|----------:|------------:|
+| EnumToString_Benchmark              | .NET 8.0 | .NET 8.0 |    13.82 ns |  0.141 ns |  0.125 ns |  1.00 |    0.00 |    1 | 0.0051 |      24 B |        1.00 |
+| EnumToString_Benchmark              | .NET 6.0 | .NET 6.0 |    24.78 ns |  0.506 ns |  0.448 ns |  1.79 |    0.03 |    2 | 0.0003 |      24 B |        1.00 |
+|                                     |          |          |             |           |           |       |         |      |        |           |             |
+| GetAttribute_WithCache_Benchmark    | .NET 8.0 | .NET 8.0 |    23.27 ns |  0.396 ns |  0.351 ns |  1.00 |    0.00 |    1 | 0.0051 |      24 B |        1.00 |
+| GetAttribute_WithCache_Benchmark    | .NET 6.0 | .NET 6.0 |    24.99 ns |  0.326 ns |  0.289 ns |  1.07 |    0.02 |    2 | 0.0002 |      24 B |        1.00 |
+|                                     |          |          |             |           |           |       |         |      |        |           |             |
+| GetAttribute_WithoutCache_Benchmark | .NET 8.0 | .NET 8.0 | 1,424.14 ns | 27.483 ns | 25.708 ns |  1.00 |    0.00 |    1 | 0.0744 |     352 B |        1.00 |
+| GetAttribute_WithoutCache_Benchmark | .NET 6.0 | .NET 6.0 | 1,745.25 ns | 34.637 ns | 47.412 ns |  1.24 |    0.04 |    2 | 0.0038 |     344 B |        0.98 |
+
 
 ## 📂 Project Structure
 
