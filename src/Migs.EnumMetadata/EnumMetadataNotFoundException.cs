@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Migs.EnumMetadata.Exceptions
+namespace Migs.EnumMetadata
 {
     public class EnumDataNotFoundException : Exception
     {
