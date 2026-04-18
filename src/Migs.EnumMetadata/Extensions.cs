@@ -12,7 +12,7 @@ namespace Migs.EnumMetadata
     public static class Extensions
     {
         //private static readonly Hashtable _cache = new Hashtable();
-        private static readonly ConcurrentDictionary<Enum, EnumMetadataAttribute>  _cache = new();
+        private static readonly ConcurrentDictionary<Enum, EnumMetadataAttribute>  Cache = new();
 
         /// <summary>
         /// Gets the attribute for the given enum considering the requested attribute type.
@@ -28,11 +28,11 @@ namespace Migs.EnumMetadata
         {
             if (EnumMetadataConfig.UseCache)
             {
-                if (_cache.TryGetValue(source, out var attr))
+                if (Cache.TryGetValue(source, out var attr))
                     return (TAttr)attr;
 
                 TAttr attribute = GetAttribute<TAttr>(ref source);
-                _cache.TryAdd(source, attribute);
+                Cache.TryAdd(source, attribute);
                 return attribute;
             }
 
