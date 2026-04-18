@@ -51,9 +51,9 @@ namespace Migs.EnumMetadata
         private static TAttr GetAttribute<TAttr>(ref Enum source) where TAttr : EnumMetadataAttribute
         {
             var type = source.GetType();
-            var name = Enum.GetName(type, source) ?? throw new EnumDataNotFoundException(typeof(TAttr), source);
+            var name = Enum.GetName(type, source) ?? throw new EnumMetadataNotFoundException(typeof(TAttr), source);
 
-            return type.GetField(name)?.GetCustomAttribute<TAttr>() ?? throw new EnumDataNotFoundException(typeof(TAttr), source);
+            return type.GetField(name)?.GetCustomAttribute<TAttr>() ?? throw new EnumMetadataNotFoundException(typeof(TAttr), source);
         }
     }
 }

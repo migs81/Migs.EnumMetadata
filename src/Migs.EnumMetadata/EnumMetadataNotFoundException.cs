@@ -2,23 +2,23 @@
 
 namespace Migs.EnumMetadata
 {
-    public class EnumDataNotFoundException : Exception
+    public class EnumMetadataNotFoundException : Exception
     {
-        public EnumDataNotFoundException()
+        public EnumMetadataNotFoundException()
         {
         }
 
-        public EnumDataNotFoundException(string? message) 
+        public EnumMetadataNotFoundException(string? message) 
             : base(message)
         {
         }
 
-        public EnumDataNotFoundException(string? message, Exception? innerException) 
+        public EnumMetadataNotFoundException(string? message, Exception? innerException) 
             : base(message, innerException)
         {
         }
 
-        public EnumDataNotFoundException(Type attributeType, Enum value)
+        public EnumMetadataNotFoundException(Type attributeType, Enum value)
             : base($"Could not find the requested '{attributeType.Name}' for '{value.GetType().Name}.{value}'!")
         {
         }
