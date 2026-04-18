@@ -26,17 +26,15 @@ namespace Migs.EnumMetadata
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static TAttr GetAttribute<TAttr>([DisallowNull] this Enum source) where TAttr : EnumMetadataAttribute
         {
-            if (EnumMetadataConfig.UseCache)
-            {
-                if (Cache.TryGetValue(source, out var attr))
-                    return (TAttr)attr;
+            if (!EnumMetadataConfig.UseCache) 
+                return GetAttribute<TAttr>(ref source);
+            
+            if (Cache.TryGetValue(source, out var attr))
+                return (TAttr)attr;
 
-                TAttr attribute = GetAttribute<TAttr>(ref source);
-                Cache.TryAdd(source, attribute);
-                return attribute;
-            }
-
-            return GetAttribute<TAttr>(ref source);
+            var attribute = GetAttribute<TAttr>(ref source);
+            Cache.TryAdd(source, attribute);
+            return attribute;
         }
 
         /// <summary>
