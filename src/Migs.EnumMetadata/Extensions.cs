@@ -11,7 +11,6 @@ namespace Migs.EnumMetadata
     /// </summary>
     public static class Extensions
     {
-        //private static readonly Hashtable _cache = new Hashtable();
         private static readonly ConcurrentDictionary<Enum, EnumMetadataAttribute>  Cache = new();
 
         /// <summary>
