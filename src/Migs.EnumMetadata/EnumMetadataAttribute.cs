@@ -6,7 +6,7 @@ namespace Migs.EnumMetadata
     /// Attribute to append additional data to enumerations.
     /// </summary>
     /// <seealso cref="Attribute" />
-    [AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = true)]
+    [AttributeUsage(AttributeTargets.Field)]
     public class EnumMetadataAttribute : Attribute
     {
         public string Name { get; }
