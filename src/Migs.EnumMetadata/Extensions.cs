@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Concurrent;
-using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
@@ -23,7 +22,7 @@ namespace Migs.EnumMetadata
         ///     <cref>EnumAttributeNotFoundException</cref>
         /// </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static TAttr GetAttribute<TAttr>([DisallowNull] this Enum source) where TAttr : EnumMetadataAttribute
+        public static TAttr GetAttribute<TAttr>(this Enum source) where TAttr : EnumMetadataAttribute
         {
             if (!EnumMetadataConfig.UseCache) 
                 return GetAttribute<TAttr>(ref source);
