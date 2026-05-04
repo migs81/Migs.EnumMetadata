@@ -14,7 +14,6 @@ namespace Migs.EnumMetadata.Tests
             None,
         }
 
-        [Flags]
         private enum Color
         {
             [EnumMetadata(Name, Description)]
