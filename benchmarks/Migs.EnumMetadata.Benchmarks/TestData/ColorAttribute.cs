@@ -1,24 +1,18 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
 
 namespace Migs.EnumMetadata.Benchmarks.TestData
 {
+    [AttributeUsage(AttributeTargets.Field)]
     public class ColorAttribute : EnumMetadataAttribute
     {
         public string Code { get; }
 
-        public ColorAttribute(
-            [DisallowNull] string name,
-            [DisallowNull] string description,
-            [DisallowNull] string code)
-            : base(name, description)
+        public ColorAttribute(string name, string description, string code) : base(name, description)
         {
             Code = code;
         }
 
-        public ColorAttribute(
-            [DisallowNull] string name,
-            [DisallowNull] string description)
-            : base(name, description)
+        public ColorAttribute(string name, string description) : base(name, description)
         {
             Code = "";
         }
