@@ -10,7 +10,7 @@ namespace Migs.EnumMetadata
     /// </summary>
     public static class Extensions
     {
-        private static readonly ConcurrentDictionary<Enum, EnumMetadataAttribute>  Cache = new();
+        private static readonly ConcurrentDictionary<Enum, EnumMetadataAttribute> Cache = new();
 
         /// <summary>
         /// Gets the attribute for the given enum considering the requested attribute type.

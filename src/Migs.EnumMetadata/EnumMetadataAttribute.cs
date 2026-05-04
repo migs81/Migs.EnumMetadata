@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 
 namespace Migs.EnumMetadata
 {
@@ -19,7 +18,7 @@ namespace Migs.EnumMetadata
         /// <param name="name">The name.</param>
         /// <param name="description">The description.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public EnumMetadataAttribute([DisallowNull] string name, [DisallowNull] string description)
+        public EnumMetadataAttribute(string name, string description)
         {
             Name = name ?? throw new ArgumentNullException(nameof(name));
             Description = description ?? throw new ArgumentNullException(nameof(description));
